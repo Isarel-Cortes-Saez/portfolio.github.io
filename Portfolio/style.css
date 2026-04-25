@@ -1,0 +1,157 @@
+/* --- Global Reset & Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-dark: #3a3a3a;
+    --header-bg: #111111;
+    --text-light: #e0e0e0;
+    --box-grey: #7a7a7a;
+    --box-light-grey: #cccccc;
+    --color-design: #2d2db9;
+    --color-dev: #00b300;
+    --color-art: #cc0000;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Navigation & Header --- */
+header {
+    background-color: var(--header-bg);
+    padding: 15px 30px;
+    transition: background-color 0.4s ease; /* Smooth transition for JS theme change */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-item, .search-btn {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Specific link colors based on your mockups */
+.highlight-blue { color: #5b5bff; }
+.highlight-green { color: #00ff00; }
+.highlight-red { color: #ff4d4d; }
+
+.nav-item:hover { color: #ffffff; }
+
+/* --- Dropdown Styles --- */
+.dropdown {
+    position: relative;
+    padding-bottom: 10px; /* Expands hover area so menu doesn't disappear */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #222;
+    list-style: none;
+    min-width: 150px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 16px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #444;
+}
+
+/* Hover trigger for dropdown */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --- Main Content Layout --- */
+main {
+    flex: 1;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.banner-container {
+    margin-bottom: 30px;
+}
+
+.main-title {
+    background-color: var(--box-grey);
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: normal;
+    border-radius: 2px;
+}
+
+.content-split {
+    display: flex;
+    gap: 20px;
+    height: 400px; /* Adjust based on content needs */
+}
+
+.content-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.text-box {
+    background-color: var(--box-grey);
+}
+
+.picture-box {
+    background-color: var(--box-light-grey);
+    color: #111;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
